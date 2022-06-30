@@ -1,0 +1,47 @@
+$gray: #e7e9eb
+*
+    transition: 0.2s
+body
+    margin: 0px
+
+.nav-content-horizontal
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%)
+    z-index: 100
+
+.nav-content-vertical
+    height: 100%
+    width: 100%
+    border-right: 1px solid $gray
+    padding: 20px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.nav-item
+    margin-bottom: 4px
+    padding: 0 12px
+    height: 42px
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    a
+        color: #767c85
+        font-size: 13px
+.nav-item-active
+    background: #f2f5fa
+    border-radius: 4px
+.left-nav-btn
+    width: 100%
+    margin: 20px 0px
+.left-nav-link
+    width: 100%
+.nav-behind
+    flex: 1
+    display: flex
+    justify-content: flex-end
+    padding: 0px 25px
