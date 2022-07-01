@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
+import Log from "./views/Log";
 import LogIn from "./views/LogIn";
 import PluginList from "./views/PluginList";
 import TechnologyList from "./views/TechnologyList";
@@ -16,6 +17,7 @@ function App() {
           element={<PluginList />}
         />
       </Route>
+      <Route path="/log" element={<Log />} />
       <Route path="/login" element={<LogIn />} />
     </Routes>
   );

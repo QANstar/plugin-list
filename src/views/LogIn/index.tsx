@@ -1,4 +1,4 @@
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import * as Api from "../../service/api";
 import { ILogin, IUser } from "../../type/type";
@@ -7,16 +7,21 @@ import store from "../../store/index";
 function LogIn() {
   const navigate = useNavigate();
   const onFinish = async (values: ILogin) => {
-    let res = await Api.signin(values);
-    if (res.status === 200) {
-      let userRes = await Api.getUserInfo();
-      let userData: IUser = {
-        token: res.data,
-        email: userRes.data.email,
-        userName: userRes.data.userName,
-      };
-      store.user.setUser(userData);
-      navigate("/");
+    try {
+      let res = await Api.signin(values);
+      if (res.status === 200) {
+        store.user.setToken(res.data);
+        let userRes = await Api.getUserInfo();
+        let userData: IUser = {
+          token: res.data,
+          email: userRes.data.email,
+          userName: userRes.data.userName,
+        };
+        store.user.setUser(userData);
+        navigate("/");
+      }
+    } catch (error) {
+      message.error("账号或密码错误");
     }
   };
 

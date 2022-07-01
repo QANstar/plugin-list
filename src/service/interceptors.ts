@@ -25,8 +25,11 @@ axios.interceptors.response.use(
                 case 401:
                     // 返回 401 清除token信息并跳转到登录页面
                     store.user.init();
-                    message.error("请先登录");
-                    window.location.href ="/login";
+                    if(window.location.href!=="/log"){
+                        message.error("请先登录");
+                        window.location.href ="/log";
+                    }
+                    
             }
         }
         return Promise.reject(error.response.data)   // 返回接口返回的错误信息

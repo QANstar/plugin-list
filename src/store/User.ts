@@ -23,6 +23,7 @@ class User implements IUser {
         this.token = ""
         this.userName = ""
         this.email =""
+        this.saveLocation()
     }
     saveLocation(){
         localStorage.setItem("user", JSON.stringify(this));
