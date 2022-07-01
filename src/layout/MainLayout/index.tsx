@@ -12,7 +12,9 @@ function MainLayout() {
       {() => (
         <div>
           <header className={style.top_nav}>
-            <Nav behind={<div>{user.userName}</div>} />
+            <Nav
+              behind={<div className={style.user_name}>{user.userName}</div>}
+            />
           </header>
           <main className={style.main_layout_main}>
             <Outlet />

@@ -1,8 +1,9 @@
-$gray: #e7e9eb
+@import "./color"
 *
     transition: 0.2s
 body
     margin: 0px
+    background-color: $gray_background
 
 .nav-content-horizontal
     width: 100%
@@ -45,3 +46,14 @@ body
     display: flex
     justify-content: flex-end
     padding: 0px 25px
+.btn_warning
+    border-color: $warning
+    color: $warning
+    &:hover,&:focus
+        border-color: $warning_hover
+        color: $warning_hover
+    &:active
+        border-color: $warning_active
+        color: $warning_active
+// .ant-table-row
+//     cursor: pointer

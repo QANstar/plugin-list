@@ -12,16 +12,30 @@
 .tech_tool
     @extend .card
     display: flex
-    justify-content: flex-end
     margin-bottom: 20px
+    justify-content: space-between
+    align-items: center
 
 .tech_table
     @extend .card
     padding: 20px
-    :global(.ant-table-row)
-        cursor: pointer
 
 .input_name
     font-size: 14px
     font-weight: bold
-    margin-bottom: 10px
+    margin: 10px 0px
+.action_icon
+    font-size: 21px
+    font-weight: bold
+
+.back
+    display: flex
+    align-items: center
+    font-size: 18px
+    font-weight: bold
+    cursor: pointer
+    .back_icon
+        margin-right: 10px
+    &:hover
+        color: $blue
+        transform: scale(1.2)
