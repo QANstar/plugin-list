@@ -26,6 +26,13 @@ export interface IRegister{
     password:string
     email:string
 }
+// 注册输入
+export interface IRegisterInput{
+    userName:string
+    password:string
+    re_password:string
+    email:string
+}
 
 // 获取用户信息
 export interface IGetUserInfo{

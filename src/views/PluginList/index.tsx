@@ -6,6 +6,7 @@ import { IAddPlugin, IPlugin } from "../../type/type";
 import style from "./style.module.sass";
 import * as Api from "../../service/api";
 import { LeftOutlined, EllipsisOutlined } from "@ant-design/icons";
+import copy from "../../utils/copy";
 
 interface TableData {
   key: number;
@@ -98,6 +99,11 @@ const PluginList = () => {
       title: "指令",
       dataIndex: "instruction",
       key: "instruction",
+      render: (data: string) => (
+        <Button onClick={() => copy(data)} type="link">
+          {data}
+        </Button>
+      ),
     },
     {
       title: "网址",
